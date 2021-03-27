@@ -82,7 +82,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">784</span>
+            <span class="post-count">786</span>
         </span>
     </span>
 
@@ -121,7 +121,7 @@
 <li><p>将所有文件提交到仓库</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;解释下这次提交的改动&quot;</span><br></pre></td></tr></table></figure></li>
 <li><p>关联远程仓库</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git@github.com:akic404&#x2F;akic404.github.io.git</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git@github.com:akic404&#x2F;blog.git</span><br></pre></td></tr></table></figure>
 
 <p><em><strong>注意要先进行ssh，输入用户名，邮箱这些事项</strong></em></p>
 <p>代码框里的akic404和akic404.github.io.git要分别改为你自己的GitHub用户名和GitHub创建的仓库地址</p>
@@ -129,6 +129,8 @@
 
 <p>↑取消关联远程仓库（防止你输错了</p>
 </li>
+</ol>
+<h3 id="下面1-用不上"><a href="#下面1-用不上" class="headerlink" title="下面1. 用不上"></a>下面1. 用不上</h3><ol>
 <li><p>在推送前先将原文件转到新的仓库，防止hexo推送页面文件时覆盖掉源文件</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b doc</span><br></pre></td></tr></table></figure>
 
@@ -138,13 +140,13 @@
 <p>↑切换回master分支（不一定用得上）</p>
 </li>
 <li><p>推送分支</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin doc</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
 
-<p>第一次推送doc分支的所有内容</p>
-<p>此后，每次本地提交后，只要有必要，就可以使用命令<code>git push origin doc</code>推送最新修改</p>
+<p>第一次推送master分支的所有内容</p>
+<p>此后，每次本地提交后，只要有必要，就可以使用命令<code>git push origin master</code>推送最新修改</p>
 </li>
 <li><p>克隆（下载文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:akic404&#x2F;akic404.github.io.git</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:akic404&#x2F;blog.git</span><br></pre></td></tr></table></figure>
 
 <p>代码框里的akic404和akic404.github.io.git要分别改为你自己的GitHub用户名和GitHub创建的仓库地址</p>
 </li>
