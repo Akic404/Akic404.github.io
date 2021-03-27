@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>&lt; 思想容器 &gt;</title>
+  <title>akic404技术博客</title>
   
   
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-03-14T14:57:54.000Z</updated>
+  <updated>2021-03-27T05:47:34.000Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo迁移/备份指南</title>
+    <link href="http://example.com/2021/03/27/hexo%E8%BF%81%E7%A7%BB%E6%8C%87%E5%8D%97/"/>
+    <id>http://example.com/2021/03/27/hexo%E8%BF%81%E7%A7%BB%E6%8C%87%E5%8D%97/</id>
+    <published>2021-03-27T05:47:34.000Z</published>
+    <updated>2021-03-27T05:47:34.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;h1 id=&quot;博客文件备份指南&quot;&gt;&lt;a href=&quot;#博客文件备份指南&quot; class=&quot;headerlink&quot; title=&quot;博客文件备份指南&quot;&gt;&lt;/a&gt;博客文件备份指南&lt;/h1&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;博客根目录下打开git</summary>
+        
+      
+    
+    
+    
+    <category term="hexo" scheme="http://example.com/categories/hexo/"/>
+    
+    
+    <category term="hexo迁移" scheme="http://example.com/tags/hexo%E8%BF%81%E7%A7%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>取消英语主课地位</title>

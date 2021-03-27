@@ -97,4 +97,113 @@
         <tag>网站</tag>
       </tags>
   </entry>
+  <entry>
+    <title>hexo迁移/备份指南</title>
+    <url>/2021/03/27/hexo%E8%BF%81%E7%A7%BB%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<ul>
+<li><h1 id="博客文件备份指南"><a href="#博客文件备份指南" class="headerlink" title="博客文件备份指南"></a>博客文件备份指南</h1></li>
+</ul>
+<ol>
+<li><p>博客根目录下打开git bash</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure></li>
+<li><p>添加所有文件到仓库</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git add -all</span><br></pre></td></tr></table></figure>
+
+<p>有报错（仓库里包含了仓库）属于正常现象，git会识别并且不会将这些文件夹放入仓库</p>
+<p><em><strong>创建新文章之类的，有新文件产生后，必须从新添加一次文件</strong></em></p>
+</li>
+<li><p>将所有文件提交到仓库</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git commit -m &quot;解释下这次提交的改动&quot;</span><br></pre></td></tr></table></figure></li>
+<li><p>关联远程仓库</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git remote add origin git@github.com:akic404&#x2F;akic404.github.io.git</span><br></pre></td></tr></table></figure>
+
+<p><em><strong>注意要先进行ssh，输入用户名，邮箱这些事项</strong></em></p>
+<p>代码框里的akic404和akic404.github.io.git要分别改为你自己的GitHub用户名和GitHub创建的仓库地址</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git remote rm origin</span><br></pre></td></tr></table></figure>
+
+<p>↑取消关联远程仓库（防止你输错了</p>
+</li>
+<li><p>在推送前先将原文件转到新的仓库，防止hexo推送页面文件时覆盖掉源文件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git checkout -b doc</span><br></pre></td></tr></table></figure>
+
+<p>↑创建分支doc</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git checkout master</span><br></pre></td></tr></table></figure>
+
+<p>↑切换回master分支（不一定用得上）</p>
+</li>
+<li><p>推送分支</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git push -u origin doc</span><br></pre></td></tr></table></figure>
+
+<p>第一次推送doc分支的所有内容</p>
+<p>此后，每次本地提交后，只要有必要，就可以使用命令<code>git push origin doc</code>推送最新修改</p>
+</li>
+<li><p>克隆（下载文件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone git@github.com:akic404&#x2F;akic404.github.io.git</span><br></pre></td></tr></table></figure>
+
+<p>代码框里的akic404和akic404.github.io.git要分别改为你自己的GitHub用户名和GitHub创建的仓库地址</p>
+</li>
+</ol>
+<hr>
+<hr>
+<hr>
+<ul>
+<li><h1 id="hexo克隆后重建"><a href="#hexo克隆后重建" class="headerlink" title="hexo克隆后重建"></a>hexo克隆后重建</h1></li>
+</ul>
+<h2 id="1-安装必要软件"><a href="#1-安装必要软件" class="headerlink" title="1. 安装必要软件"></a>1. 安装必要软件</h2><ul>
+<li><p>git</p>
+<blockquote>
+<p><a href="https://gitforwindows.org/">https://gitforwindows.org/</a></p>
+</blockquote>
+</li>
+<li><p>nodejs</p>
+<blockquote>
+<p><a href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a> </p>
+</blockquote>
+</li>
+<li><p>(不一定用得上）Notepad++</p>
+<blockquote>
+<p><a href="https://notepad-plus.it.softonic.com/">https://notepad-plus.it.softonic.com/</a></p>
+</blockquote>
+</li>
+</ul>
+<h2 id="2-安装Hexo"><a href="#2-安装Hexo" class="headerlink" title="2.安装Hexo"></a>2.安装Hexo</h2><p>打开 git bash运行<br>   <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-复制原来的文件到目录下"><a href="#3-复制原来的文件到目录下" class="headerlink" title="3.复制原来的文件到目录下"></a>3.复制原来的文件到目录下</h2><h2 id="4-ssh"><a href="#4-ssh" class="headerlink" title="4.ssh"></a>4.ssh</h2><p>回到你的git bash中，</p>
+<pre><code>git config --global user.name &quot;yourname&quot;
+git config --global user.email &quot;youremail&quot;
+</code></pre>
+<p>这里的yourname输入你的GitHub用户名，youremail输入你GitHub的邮箱。这样GitHub才能知道你是不是对应它的账户。</p>
+<p>可以用以下两条，检查一下你有没有输对</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config user.name</span><br><span class="line">git config user.email</span><br></pre></td></tr></table></figure>
+
+<p>然后创建SSH,一路回车</p>
+<pre><code>ssh-keygen -t rsa -C &quot;youremail&quot;
+</code></pre>
+<p>这个时候它会告诉你已经生成了.ssh的文件夹。在你的电脑中找到这个文件夹。</p>
+<p>ssh，简单来讲，就是一个秘钥，其中，id_rsa是你这台电脑的私人秘钥，不能给别人看的，id_rsa.pub是公共秘钥，可以随便给别人看。把这个公钥放在GitHub上，这样当你链接GitHub自己的账户时，它就会根据公钥匹配你的私钥，当能够相互匹配时，才能够顺利的通过git上传你的文件到GitHub上。</p>
+<p>而后在GitHub的setting中，找到SSH keys的设置选项，点击New SSH key<br>把你的id_rsa.pub里面的信息复制进去。<br>————————————————</p>
+<blockquote>
+<p>版权声明：ssh部分为CSDN博主「zjufangzh」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/sinat_37781304/article/details/82729029">https://blog.csdn.net/sinat_37781304/article/details/82729029</a> </p>
+</blockquote>
+<h2 id="5-正常运行"><a href="#5-正常运行" class="headerlink" title="5.正常运行"></a>5.正常运行</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+
+<p>整合文件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<p>开启本地端口（<a href="http://localhost:4000/">http://localhost:4000</a></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<p>推送到服务器</p>
+<hr>
+<hr>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo迁移</tag>
+      </tags>
+  </entry>
 </search>
